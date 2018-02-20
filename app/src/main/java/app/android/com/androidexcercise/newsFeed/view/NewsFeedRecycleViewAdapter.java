@@ -124,7 +124,8 @@ public class NewsFeedRecycleViewAdapter extends RecyclerView.Adapter<RecyclerVie
             int height = DEFAULT_HEIGHT;
             if(row.getDescription() != null && row.getDescription().length() < 50 || row.getDescription() == null) {
                 RequestOptions requestOptions = new RequestOptions()
-                        .override(DEFAULT_SMALL_WIDTH,DEFAULT_SMALL_HEIGHT);
+                        .override(DEFAULT_SMALL_WIDTH,DEFAULT_SMALL_HEIGHT)
+                        .centerCrop();
                 Glide.with(context)
                         .load(R.drawable.no_image)
                         .apply(requestOptions)
@@ -134,7 +135,6 @@ public class NewsFeedRecycleViewAdapter extends RecyclerView.Adapter<RecyclerVie
                         .centerCrop()
                         .error(R.drawable.no_image)
                         .override(width, height);
-
                 Glide.with(context)
                         .load(row.getImageHref())
                         .apply(requestOptions)

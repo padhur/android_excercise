@@ -10,10 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.ScrollView;
-
 import app.android.com.androidexcercise.R;
 import app.android.com.androidexcercise.base.BaseMVPActivity;
 import app.android.com.androidexcercise.newsFeed.inject.DaggerNewsFeedComponent;
