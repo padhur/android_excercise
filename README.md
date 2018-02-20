@@ -1,2 +1,2 @@
 # andriod_excercise
-Android Application using Dagger and Rx Java.
+Android Application using MVP Arch,Dagger2 and Rx Java.
