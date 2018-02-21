@@ -112,10 +112,20 @@ public class NewsFeedRecycleViewAdapter extends RecyclerView.Adapter<RecyclerVie
         @BindView(R.id.heading) public TextView heading;
         @BindView(R.id.description) public TextView description;
         @BindView(R.id.imagecontent) public ImageView imagedata;
+        @BindView(R.id.textscrollview) public ScrollView textviewScroller;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
+            description.setOnTouchListener(new View.OnTouchListener() {
+
+                public boolean onTouch(View v, MotionEvent event) {
+                    // Disallow the touch request for parent scroll on touch of child view
+                    v.getParent().requestDisallowInterceptTouchEvent(true);
+                    return false;
+                }
+            });
+            description.setMovementMethod(new ScrollingMovementMethod());
         }
         void bindData(Row row, final Context context, int position){
             heading.setText(row.getTitle());
