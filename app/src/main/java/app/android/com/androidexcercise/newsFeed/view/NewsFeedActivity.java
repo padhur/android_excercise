@@ -161,6 +161,13 @@ public class NewsFeedActivity extends BaseMVPActivity<NewsFeedView, NewsFeedPres
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setOnTouchListener(new View.OnTouchListener() {
+
+            public boolean onTouch(View v, MotionEvent event) {
+                findViewById(R.id.textscrollview).getParent().requestDisallowInterceptTouchEvent(false);
+                return false;
+            }
+        });
     }
 
     private void actionBarSetTitle(String title) {
