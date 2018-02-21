@@ -38,15 +38,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3">
-                <TextView
-                    android:id="@+id/description"
+                <ScrollView
+                    android:id="@+id/textscrollview"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorBalck"
-                    android:maxLines="4"
-                    android:scrollbars="vertical"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginRight="15dp" />
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBalck"
+                        android:maxLines="4"
+                        android:scrollbars="vertical"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp" />
+                 </ScrollView>
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/layout_image"
